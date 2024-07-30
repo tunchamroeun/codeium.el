@@ -372,7 +372,7 @@ If you set `codeium-port', it will be used instead and no process will be create
 (codeium-def codeium-command (api state)
     (unless (codeium-state-manager-directory state)
         (setf (codeium-state-manager-directory state) (make-temp-file "codeium_" t)))
-    `(,(codeium-get-config 'codeium-command-executable api state)
+    `("steam-run",(codeium-get-config 'codeium-command-executable api state)
          "--api_server_url" ,(codeium-get-config 'codeium-api-url api state)
          "--manager_dir" ,(codeium-state-manager-directory state)
          "--register_user_url" ,(codeium-get-config 'codeium-register-user-url api state)
